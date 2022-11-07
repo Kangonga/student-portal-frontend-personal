@@ -9,7 +9,6 @@ export default function Academics(){
         <Link to="/academics/doneUnits">DoneUnits</Link>
         <Link to="/academics/register">Register</Link>
         <Link to="/academics/search">Searchbar</Link>
-
         <Routes>
             <Route exact path='/doneUnits' element={<DoneUnits/>}/>
             <Route exact path='/register' element={<RegisterCourse/>}/>
