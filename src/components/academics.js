@@ -11,9 +11,9 @@ export default function Academics(){
         <Link to="/academics/search">Searchbar</Link>
 
         <Routes>
-            <Route path='/academics/doneUnits' element={<DoneUnits/>}/>
-            <Route path='/academics/register' element={<RegisterCourse/>}/>
-            <Route path='/academics/search' element={<Searchbar/>}/>
+            <Route exact path='/doneUnits' element={<DoneUnits/>}/>
+            <Route exact path='/register' element={<RegisterCourse/>}/>
+            <Route exact path='/search' element={<Searchbar/>}/>
         </Routes>
     </>
         
