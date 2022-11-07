@@ -1,7 +1,9 @@
 import person from '../assets/generic-person.jpg'
 export default function StudentInfo(){
     return(
-        <section id="student-Info">
+        <section id="student-info">
+
+            <h2>Hello User</h2>
             <article id="basic-info">
                 <figure id="student-image">
                     <img src={person} alt="person logo" className='person-logo'/>

@@ -1,9 +1,10 @@
 import {Routes, Route, Link} from 'react-router-dom'
 import Academics from './academics'
 import StudentInfo from './studentInfo'
-import DoneUnits from './doneUnits'
-import RegisterCourse from './registerCourse'
-import Searchbar from './searchbar'
+import RequestQuoteRoundedIcon from '@mui/icons-material/RequestQuoteRounded';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
+import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 export default function Dashboard (){
     return (
         <main id="container">
@@ -15,11 +16,11 @@ export default function Dashboard (){
 function Panel(){
     return (
         <section id="panel">
-            <Link to ="/">Personal Information</Link>
-            <Link to ="/academics">Academics</Link>
-            <Link to ="/finances">Financials</Link>
-            <Link to ="/announce">Announcements</Link>
-            <Link to ="/logout">Log Out</Link>
+            <Link className="nav-link" to ="/"><div><GridViewOutlinedIcon/> Dashboard</div></Link>
+            <Link className="nav-link" to ="/academics"><div><ImportContactsIcon/> Academics</div></Link>
+            <Link className="nav-link" to ="/finances"><div><RequestQuoteRoundedIcon/> Financials</div></Link>
+            {/* <Link to ="/announce">Announcements</Link> */}
+            <Link className="nav-link" to ="/logout"><div><ExitToAppRoundedIcon/> Log Out</div></Link>
         </section>
     )
 }
@@ -27,11 +28,12 @@ function Panel(){
 function MainBoard(){
     return(
         <section id="mainboard">
+            <article id="logo-background"></article>
             <Routes>
                 <Route path="/" element={<StudentInfo />}/>
                 <Route path="/academics/*" element={<Academics/>}/>
                 <Route path="/finances" element={<h1>Finances</h1>} />
-                <Route path="/announce" element={<h1>Announcements</h1>}/>
+                {/* <Route path="/announce" element={<h1>Announcements</h1>}/> */}
                 <Route path="/logout" element={<StudentInfo/>}/>
                 {/* <Route exact path='/academics/doneUnits' element={<DoneUnits/>}/>
                 <Route exact path='/academics/register' element={<RegisterCourse/>}/>
