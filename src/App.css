@@ -32,5 +32,39 @@ a {
     display: block;
     color : inherit;
     text-decoration: none;
-    
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+#academics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.academics-tabs {
+    /* width: 40%; */
+    font-size: 1.5rem;
+}
+.units-arranged{
+    display: grid;
+    /* grid-template-columns: repeat(1,1fr 2fr 1fr)minmax(auto, 2fr); */
+    grid-template-columns: repeat(auto-fit,minmax(100px, 2fr));
+    justify-items: center;
+}
+.searchbar {
+    width: 70%;
+    margin: auto;
+}
+.searchbar input {
+    width: 100%;
+    line-height: 3rem;
+    height: 3rem;
+    border-radius: 20px;
+    border-color: black;
+    margin: 2rem 0;
 }

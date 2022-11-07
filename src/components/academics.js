@@ -4,17 +4,21 @@ import RegisterCourse from './registerCourse'
 import Searchbar from './searchbar'
 export default function Academics(){
     return(
-    <>
-    <h1>Academics</h1>
-        <Link to="/academics/doneUnits">DoneUnits</Link>
-        <Link to="/academics/register">Register</Link>
-        <Link to="/academics/search">Searchbar</Link>
-        <Routes>
-            <Route exact path='/doneUnits' element={<DoneUnits/>}/>
-            <Route exact path='/register' element={<RegisterCourse/>}/>
-            <Route exact path='/search' element={<Searchbar/>}/>
-        </Routes>
-    </>
+    <section id="academics">
+        <nav>
+            <Link to="/academics/doneUnits" className='academics-tabs'>Attempted Units</Link>
+            <Link to="/academics/register" className='academics-tabs'>Register New Units</Link>
+            {/* <Link to="/academics/search" className='academics-tabs'>Searchbar</Link> */}
+        </nav>
+        <main>
+            <Routes>
+                <Route path='/' element={<DoneUnits/>}/>
+                <Route path='/doneUnits' element={<DoneUnits/>}/>
+                <Route path='/register' element={<RegisterCourse/>}/>
+            </Routes>
+        </main>
+        
+    </section>
         
     )
 }
