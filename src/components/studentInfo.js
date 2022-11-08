@@ -24,23 +24,23 @@ export default function StudentInfo(){
                         <tbody>
                             <tr>
                             <td>Admission No.</td>
-                            <td>Details</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Names</td>
-                            <td>Actual Names</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>ID/Passport</td>
-                            <td>Actual Passport</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td>Only Two Genders </td>
+                            <td> </td>
                         </tr>
                         <tr>
                             <td>Date Of Birth</td>
-                            <td>Actual Date</td>
+                            <td></td>
                         </tr>
                         </tbody>
                         <tfoot>

@@ -13,23 +13,23 @@ export default function Finances(){
                         <tbody>
                         <tr>
                             <td>Name</td>
-                            <td>Actual Name</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Admission No.</td>
-                            <td>Details</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Total Paid overall</td>
-                            <td>Actual balance</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Semester</td>
-                            <td>Actual semester</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Semester Balance</td>
-                            <td>debt remaining </td>
+                            <td></td>
                         </tr>
                         
                         </tbody>
