@@ -1,4 +1,4 @@
-import person from '../assets/generic-person.jpg'
+import person from '../assets/person-logo.png';
 export default function StudentInfo(){
     return(
         <section id="student-info">
@@ -21,7 +21,8 @@ export default function StudentInfo(){
                                 </th>
                             </tr>
                         </thead>
-                        <tbody><tr>
+                        <tbody>
+                            <tr>
                             <td>Admission No.</td>
                             <td>Details</td>
                         </tr>
