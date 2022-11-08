@@ -1,5 +1,20 @@
+import Searchbar from "./searchbar"
 export default function RegisterCourse(){
     return(
-        <h1>RegisterCourse</h1>
+        <>
+            <Searchbar/>
+            <section className="units-arranged">
+                <div>
+                    <header>Unit Code</header>
+                </div>
+                <div>
+                    <header>Unit Name</header>
+                </div>
+                <div>
+                    <header>Unit Category</header>
+                </div>
+            </section>
+        </>
+        
     )
 }
