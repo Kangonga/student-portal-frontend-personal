@@ -1,12 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link, Navigate} from 'react-router-dom';
 import Dashboard from './dashboard';
+
 
 function Login() {
   const [errorMessages, setErrorMessages] = useState({})
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [user, setUser] = useState('')
+  const [password, setPassword] = useState('')
+  const [users, setUsers] = useState([])
 
-
+  useEffect(()=>{
+    let url = "http://localhost:8000/students"
+    fetch(url)
+    .then(resp=>resp.json())
+    .then(data=>{
+      // console.log(data[0])
+      setUsers(data)
+    })
+    console.log(users)
+  }
+  ,[])
+  function handleChange(e){
+    setUser(user=>e.target.value)
+    console.log(user)
+  }
+  function handleSub(e){
+    e.preventDefault()
+    console.log(users)
+  }
   const database = [
     {
       registrationNumber: "user1",
@@ -57,16 +79,18 @@ function Login() {
   const renderForm = (
     <div className="form">
 
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={(e)=>{handleSubmit(e) ;handleSub(e)}} >
         <div className="input-container">
           <label>Registration number: </label>
           <input type="text"
             name="uname"
+            value={user}
+            onChange = {e=>handleChange(e)}
             placeholder="Type your Student Registration Number."
-            required />
-            
+            required /> 
           {renderErrorMessage("uname")}
         </div>
+
         <div className="input-container">
           <label>Password: </label>
           <input type="password"

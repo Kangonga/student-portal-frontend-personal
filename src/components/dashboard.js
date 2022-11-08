@@ -42,6 +42,7 @@ function MainBoard(){
             </article>
             <Routes>
                 <Route path="/" element={<StudentInfo />}/>
+                <Route path="/dashboard" element={<StudentInfo />}/>
                 <Route path="/academics/*" element={<Academics/>}/>
                 <Route path="/finances" element={<Finances />} />
                 {/* <Route path="/announce" element={<h1>Announcements</h1>}/> */}
