@@ -76,7 +76,7 @@ function Login() {
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <button type="submit">Login</button>
+          <button type="submit"><span>Login</span></button>
         </div>
       </form>
 
@@ -89,7 +89,7 @@ function Login() {
     <div className="app">
     
       <div className="login-form">
-        <div className="title">Login to Student Portal</div>
+        <div className="title">Student Login</div>
         {isSubmitted ? 
          <Navigate to="/dashboard" />: renderForm}
      
