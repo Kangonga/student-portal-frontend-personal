@@ -108,12 +108,31 @@ nav {
 .academics-tabs {
     /* width: 40%; */
     font-size: 1.5rem;
+    background-color: wheat;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.academics-tabs:hover{
+    color: wheat;
+    background-color: var(--bluish);
+     transform: translateY(-10px);
+    transition-duration: 0.5s; 
+    /* transition: width 2s, height 4s; */
+    transition-timing-function: ease;
+    /* transition-delay: 0.1s; */
 }
 .units-arranged{
     display: grid;
     /* grid-template-columns: repeat(1,1fr 2fr 1fr)minmax(auto, 2fr); */
     grid-template-columns: repeat(auto-fit,minmax(100px, 2fr));
-    justify-items: center;
+    /* justify-items: center; */
+    margin-left: 1rem;
+    border-bottom: 1px solid black;
+}
+.units-arranged header{
+    font-size: 1.5rem;
+    color: var(--bluish);
+    margin-bottom: 1rem;
 }
 .search-bar {
     width: 70%;
@@ -196,4 +215,28 @@ thead > tr>th {
 }
 #finance-table table {
     border-radius: 20px;
+}
+.incorrect-details {
+    font-size: small;
+    color: var(--reddish);
+    margin: .5rem;
+    /* display: none; */
+}
+.no-show {
+    display: none;
+}
+.arranged{
+    margin-bottom: 1rem;
+    justify-content:space-between;
+    text-align: left;
+}
+.search-bar input::placeholder{
+    color: gray;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.search-bar input {
+    font-size: 1rem;
+    color: black;
+    text-align: center;
 }

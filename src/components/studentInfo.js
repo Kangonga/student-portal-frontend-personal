@@ -1,9 +1,10 @@
 import person from '../assets/person-logo.png';
-export default function StudentInfo(){
+export default function StudentInfo({student}){
+    console.log("studentinfo",student)
     return(
         <section id="student-info">
 
-            <h2>Hello User</h2>
+            <h2>Welcome {student.name} {student.surname}</h2>
             <article id="basic-info">
                 <figure id="student-image">
                     <img src={person} alt="person logo" className='person-logo'/>
@@ -24,23 +25,19 @@ export default function StudentInfo(){
                         <tbody>
                             <tr>
                             <td>Admission No.</td>
-                            <td></td>
+                            <td>{student.admission_number}</td>
                         </tr>
                         <tr>
                             <td>Names</td>
-                            <td></td>
+                            <td>{student.name} {student.surname}</td>
                         </tr>
                         <tr>
                             <td>ID/Passport</td>
-                            <td></td>
+                            <td>{student.national_id}</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td>Date Of Birth</td>
-                            <td></td>
+                            <td>{student.gender}</td>
                         </tr>
                         </tbody>
                         <tfoot>

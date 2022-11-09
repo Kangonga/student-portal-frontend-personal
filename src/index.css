@@ -110,6 +110,10 @@ button {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+button:active {
+  transform: translateY(3px);
+    transition-timing-function: ease;
+}
 button span:after {
   content: "  >>";
   opacity: 0;
