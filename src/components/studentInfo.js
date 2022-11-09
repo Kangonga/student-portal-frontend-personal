@@ -4,7 +4,7 @@ export default function StudentInfo({student}){
     return(
         <section id="student-info">
 
-            <h2>Welcome {student.name} {student.surname}</h2>
+            <h2>Welcome {!!student.name?student.name:''} {!!student.surname?student.surname:""}</h2>
             <article id="basic-info">
                 <figure id="student-image">
                     <img src={person} alt="person logo" className='person-logo'/>

@@ -1,9 +1,7 @@
 import Searchbar from "./searchbar"
 export default function RegisterCourse({units}){
-    console.log(units)
     return(
         <>
-         
             <Searchbar/>
             <section className="units-arranged">
                 <div>

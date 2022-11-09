@@ -52,9 +52,6 @@ function MainBoard({student, units}){
                 <Route path="/academics/*" element={<Academics student={student} units={units}/>}/>
                 <Route path="/finances" element={<Finances student={student}/>} />   
                 <Route path="/logout" element={<StudentInfo/>}/>
-                {/* <Route exact path='/academics/doneUnits' element={<DoneUnits/>}/>
-                <Route exact path='/academics/register' element={<RegisterCourse/>}/>
-                <Route exact path='/academics/search' element={<Searchbar/>}/> */}
             </Routes>
         </section>
     )
