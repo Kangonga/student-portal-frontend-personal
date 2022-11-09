@@ -13,6 +13,8 @@ function App() {
   const [inCorrectDetails, setIncorrectDetails] = useState(false)
   const [units, setUnits] = useState([])
   const [s,setS] = useState('')
+  const [formdata,setFormData] = useState({})
+
   function handleSub(e,user,password){
     e.preventDefault()
     let student =users?.filter(student=>student.name===user&&password===student.password)
@@ -25,6 +27,7 @@ function App() {
       setIncorrectDetails(true)
     }
   }
+ 
   useEffect(()=>{
     let studentsurl = "http://localhost:9292/students"
     let unitsurl = "http://localhost:9292/units"
@@ -35,9 +38,19 @@ function App() {
     }); 
     fetch(unitsurl)
     .then(resp=>resp.json())
-    .then(data=>setUnits(data))
+    .then(data=>setUnits(data));
+    let params = {
+      
+    }
+    if(formdata){
+      fetch(unitsurl,params)
+      .then(resp=>resp.json())
+      .then(data=>console.log(data))
+    }
   }
-  ,[])
+
+  ,[formdata])
+
   return (
     <>
     <Routes>
@@ -48,7 +61,8 @@ function App() {
       user={users}
       setUsers={setUsers}/>} />
       <Route path="/ForgotPassword" element={<ForgotPassword/>} />
-      <Route path="/dashboard/*" element={<Dashboard login={loggedIn} setLogin={setLoggedIn} student={s[0]} units={units}/>}/>
+      <Route path="/dashboard/*" element={<Dashboard setFormData={setFormData} formdata={formdata}
+      login={loggedIn} setLogin={setLoggedIn} student={s[0]} units={units}/>}/>
       </Routes>
     </>
   );

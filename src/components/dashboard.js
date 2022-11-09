@@ -11,12 +11,12 @@ import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import logo from '../assets/logo.jpg';
 import { useEffect, useState } from 'react';
 
-export default function Dashboard ({login, student, units}){
-    // console.log("dashboard",student)
+export default function Dashboard ({login, student, units,setFormData,formdata}){
     return (
         <main id="container">
             <Panel login={login} student={student}/>
-            <MainBoard student={student} units={units}/>
+            <MainBoard student={student} units={units}
+             setFormData={setFormData} formdata={formdata}/>
         </main>
     )
 }
@@ -39,7 +39,7 @@ function Panel({setLogin}){
     )
 }
 
-function MainBoard({student, units}){
+function MainBoard({student, units,setFormData, formdata}){
     console.log("mainboard: " ,student)
     return(
         <section id="mainboard">
@@ -49,7 +49,7 @@ function MainBoard({student, units}){
             <Routes>
                 <Route path="/" element={<StudentInfo student={student}/>}/>
                 <Route path="/dashboard" element={<StudentInfo student={student}/>}/>
-                <Route path="/academics/*" element={<Academics student={student} units={units}/>}/>
+                <Route path="/academics/*" element={<Academics student={student} units={units}setFormData={setFormData} formdata={formdata}/>}/>
                 <Route path="/finances" element={<Finances student={student}/>} />   
                 <Route path="/logout" element={<StudentInfo/>}/>
             </Routes>

@@ -2,7 +2,7 @@ import { Route, Routes, Link } from 'react-router-dom'
 import DoneUnits from './doneUnits'
 import RegisterCourse from './registerCourse'
 import Searchbar from './searchbar'
-export default function Academics({units}){
+export default function Academics({units,addUnit,setFormData ,formdata}){
     return(
     <section id="academics">
         <nav>
@@ -15,7 +15,7 @@ export default function Academics({units}){
             <Routes>
                 <Route path='/' element={<DoneUnits units={units}/>}/>
                 <Route path='/doneUnits' element={<DoneUnits units={units}/>}/>
-                <Route path='/register' element={<RegisterCourse units={units}/>}/>
+                <Route path='/register' element={<RegisterCourse units={units}setFormData={setFormData} formdata={formdata}/>}/>
             </Routes>
         </main>
         
