@@ -40,7 +40,9 @@ function App() {
     .then(resp=>resp.json())
     .then(data=>setUnits(data));
     let params = {
-      
+      method:'POST',
+      headers:{'Content-Type': 'application/json'},
+      body: JSON.stringify(formdata)
     }
     if(formdata){
       fetch(unitsurl,params)

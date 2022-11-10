@@ -4,7 +4,7 @@ export default function StudentInfo({student}){
     return(
         <section id="student-info">
 
-            <h2>Welcome {!!student.name?student.name:''} {!!student.surname?student.surname:""}</h2>
+            <h2>Welcome {student?.name} {student?.surname}</h2>
             <article id="basic-info">
                 <figure id="student-image">
                     <img src={person} alt="person logo" className='person-logo'/>
@@ -25,19 +25,19 @@ export default function StudentInfo({student}){
                         <tbody>
                             <tr>
                             <td>Admission No.</td>
-                            <td>{student.admission_number}</td>
+                            <td>{student?.admission_number}</td>
                         </tr>
                         <tr>
                             <td>Names</td>
-                            <td>{student.name} {student.surname}</td>
+                            <td>{student?.name} {student?.surname}</td>
                         </tr>
                         <tr>
                             <td>ID/Passport</td>
-                            <td>{student.national_id}</td>
+                            <td>{student?.national_id}</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td>{student.gender}</td>
+                            <td>{student?.gender}</td>
                         </tr>
                         </tbody>
                         <tfoot>
