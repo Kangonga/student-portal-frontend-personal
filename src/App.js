@@ -5,7 +5,6 @@ import Login from './components/login';
 import ForgotPassword from './components/forgotPassword';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Password, StarRounded } from '@mui/icons-material';
 
 function App() {
   const [users, setUsers] = useState([])
@@ -14,6 +13,10 @@ function App() {
   const [units, setUnits] = useState([])
   const [s,setS] = useState('')
   const [formdata,setFormData] = useState({})
+  const [doneUnits,setDoneUnits] = useState([])
+  const [unitData,setUnitData] = useState({})
+  const [isDropped,setIsDropped] = useState(false)
+
 
   function handleSub(e,user,password){
     e.preventDefault()
@@ -21,7 +24,7 @@ function App() {
     if (student.length > 0){
       setLoggedIn(true)
       setIncorrectDetails(false)
-      setS(student)
+      setS(student[0])
     }
     else {
       setIncorrectDetails(true)
@@ -31,6 +34,7 @@ function App() {
   useEffect(()=>{
     let studentsurl = "http://localhost:9292/students"
     let unitsurl = "http://localhost:9292/units"
+    let adduniturl = `http://localhost:9292/student/${s?.id}`
     fetch(studentsurl)
     .then(resp=>resp.json())
     .then(data=>{
@@ -39,16 +43,18 @@ function App() {
     fetch(unitsurl)
     .then(resp=>resp.json())
     .then(data=>setUnits(data));
+
     let params = {
       method:'POST',
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify(formdata)
     }
     if(formdata){
-      fetch(unitsurl,params)
+      fetch(adduniturl,params)
       .then(resp=>resp.json())
-      .then(data=>console.log(data))
+      .then(data=>setDoneUnits({...doneUnits,data}))
     }
+  
   }
 
   ,[formdata])
@@ -64,7 +70,14 @@ function App() {
       setUsers={setUsers}/>} />
       <Route path="/ForgotPassword" element={<ForgotPassword/>} />
       <Route path="/dashboard/*" element={<Dashboard setFormData={setFormData} formdata={formdata}
-      login={loggedIn} setLogin={setLoggedIn} student={s[0]} units={units}/>}/>
+      login={loggedIn} setLogin={setLoggedIn} student={s} units={units}
+      doneUnits = {doneUnits}
+      unitData={unitData}
+      setDoneUnits={setDoneUnits}
+      setUnitData={setUnitData}
+      isDropped = {isDropped}
+      setIsDropped={setIsDropped}
+      />}/>
       </Routes>
     </>
   );

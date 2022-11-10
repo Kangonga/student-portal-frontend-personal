@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Searchbar from "./searchbar"
-export default function RegisterCourse({units,formdata,setFormData}){
+export default function RegisterCourse({units,formdata,setFormData,student}){
     const [search, setSearch] = useState('')
    
     function addUnit(e){
@@ -30,7 +30,7 @@ export default function RegisterCourse({units,formdata,setFormData}){
                     
                 </div>
                 </section>
-                {units.filter(unit=>unit.name?.includes(search)).map((unit,index)=>{
+                {units.filter(unit=>unit.name?.toLowerCase()?.includes(search?.toLowerCase())).map((unit,index)=>{
                     return <form key={index} className="units-arranged arranged" onSubmit={e=>addUnit(e)}>
                         <input name="code"type="number"value={unit.code} disabled/>
                         <input name="name"type="text"value={unit.name} disabled/>

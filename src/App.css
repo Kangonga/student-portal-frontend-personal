@@ -246,3 +246,15 @@ thead > tr>th {
     font-family: inherit;
     color: inherit;
 }
+@media screen and (max-width: 480px) {
+    .logo {
+      display: none
+    }
+    #panel span{
+        display: none;
+    }
+    nav a {
+        font-size: 10px;
+    }
+
+  }
