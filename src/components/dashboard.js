@@ -29,7 +29,7 @@ function Panel({setLogin}){
             <img class="logo" src={logo} alt="logo"/>
             </article>
             <Link className="nav-link" to ="/dashboard"><div><GridViewOutlinedIcon/> <span>Dashboard</span></div></Link>
-            <Link className="nav-link" to ="/dashboard/academics/"><div><ImportContactsIcon/> <span>Academica</span></div></Link>
+            <Link className="nav-link" to ="/dashboard/academics/"><div><ImportContactsIcon/> <span>Academics</span></div></Link>
             <Link className="nav-link" to ="/dashboard/finances"><div><RequestQuoteRoundedIcon/> <span>Fincancials</span></div></Link>
             <Link onClick={handleLogOut} className="nav-link" to ="/"><div><ExitToAppRoundedIcon/> <span>Log out</span></div></Link>
             </section>    
